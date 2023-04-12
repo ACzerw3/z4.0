@@ -36,17 +36,23 @@ class Main {
           try {
           Service s = new Service();
           s.addStudent(new Student(n, a));
-          var students = s.getStudents();
-          for(Student current : students) 
+           } catch (IOException e) { 
+
+      } 
           break;
         case 2:
+          try{
+          Service s = new Service();
+          var students = s.getStudents();
+          for(Student current : students)
           System.out.println(current.ToString());
+          } catch (IOException e) { 
+
+      } 
           break;
           
       
-    } catch (IOException e) { 
-
-      } 
+   
   }
 }
 }
