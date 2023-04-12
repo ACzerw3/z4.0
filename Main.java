@@ -33,21 +33,20 @@ class Main {
            String n = name.nextLine();
           System.out.println("Podaj wiek: ");
           int a = age.nextInt();
+          try {
+          Service s = new Service();
+          s.addStudent(new Student(n, a));
+          var students = s.getStudents();
+          for(Student current : students) 
+          break;
+        case 2:
+          System.out.println(current.ToString());
+          break;
           
-      try {
-      Service s = new Service();
-      s.addStudent(new Student(n, a));
-       
-
-      var students = s.getStudents();
-      for(Student current : students) {
-        System.out.println(current.ToString());
-      }
       
-    } catch (IOException e) {
+    } catch (IOException e) { 
 
-    
-      }
+      } 
   }
 }
 }
