@@ -23,6 +23,8 @@ class Main {
     opcja = liczba.nextInt();
     Scanner name = new Scanner(System.in);
     Scanner age = new Scanner(System.in);
+    Scanner lastname = new Scanner(System.in);
+    Service s = new Service();
     switch(opcja)
       {
         case 0:
@@ -31,18 +33,18 @@ class Main {
         case 1:
           System.out.println("Podaj imię: ");
            String n = name.nextLine();
+          System.out.println("Podaj nazwisko: ");
+          String l = lastname.nextLine();
           System.out.println("Podaj wiek: ");
           int a = age.nextInt();
           try {
-          Service s = new Service();
-          s.addStudent(new Student(n, a));
+          s.addStudent(new Student(n, l, a));
            } catch (IOException e) { 
 
       } 
           break;
         case 2:
           try{
-          Service s = new Service();
           var students = s.getStudents();
           for(Student current : students)
           System.out.println(current.ToString());
