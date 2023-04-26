@@ -24,6 +24,7 @@ class Main {
     Scanner name = new Scanner(System.in);
     Scanner age = new Scanner(System.in);
     Scanner lastname = new Scanner(System.in);
+    Scanner adres = new Scanner(System.in);
     Service s = new Service();
     switch(opcja)
       {
@@ -37,8 +38,10 @@ class Main {
           String l = lastname.nextLine();
           System.out.println("Podaj wiek: ");
           int a = age.nextInt();
+          System.out.println("Podaj ulicę: ");
+          String ad = adres.nextLine();
           try {
-          s.addStudent(new Student(n, l, a));
+          s.addStudent(new Student(n, l, a, ad));
            } catch (IOException e) { 
 
       } 
@@ -52,7 +55,7 @@ class Main {
 
       } 
           break;
-          
+      
       
    
   }
